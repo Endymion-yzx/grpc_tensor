@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package calc;
+
+// Interface
+service Calc {
+	rpc CalcArea(Circle) returns (Area) {}
+
+	// rpc CalcCircum(Circle) returns (Circum) {}
+
+	// rpc CalcAreaSum(stream Circle) returns (Area) {}
+
+	// rpc CalcAreaStream(stream Circle) returns (stream Area) {}
+}
+
+message Point {
+	double x = 1;
+	double y = 2;
+}
+
+message Line {
+	// Ax + By + C = 0
+	double A = 1;
+	double B = 2;
+	double C = 3;
+}
+
+message Circle {
+	Point center = 1;
+	double radius = 2;
+}
+
+message Area {
+	double value = 1;
+}
+
+message Circum {
+	double value = 1;
+}
